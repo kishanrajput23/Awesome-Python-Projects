@@ -32,7 +32,7 @@ if __name__ == "__main__":
     xState = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     zState = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     turn = 1 # 1 for X and 0 for O
-    print("Welcome to Tic Tac Toe")
+    print("Welcome to Tic Tac Toe Game")
     while(True):
         printBoard(xState, zState)
         if(turn == 1):
@@ -49,4 +49,10 @@ if __name__ == "__main__":
             break
         
         turn = 1 - turn
-        
+      
+<!--  images section    -->
+
+![image](https://user-images.githubusercontent.com/94219488/193395918-cf055417-f897-44bb-ac90-9a9ac6b9fff2.png)
+
+![image](https://user-images.githubusercontent.com/94219488/193395853-5f6eb6f5-0efd-44b1-9f0b-5c2d44d56b6c.png)
+
