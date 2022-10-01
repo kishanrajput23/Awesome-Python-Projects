@@ -16,3 +16,7 @@ def merge_pdfs(paths, output):
 file1 = input("Enter the path of the first file: ")
 file2 = input("Enter the path of the second file: ")
 output = input("Enter the name of the output file: ")
+
+if __name__ == '__main__':
+    paths = [file1, file2]
+    merge_pdfs(paths, output= output + ".pdf")
