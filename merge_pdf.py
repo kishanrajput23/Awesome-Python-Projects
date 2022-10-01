@@ -12,3 +12,7 @@ def merge_pdfs(paths, output):
     # Write out the merged PDF
     with open(output, 'wb') as out:
         pdf_writer.write(out)
+
+file1 = input("Enter the path of the first file: ")
+file2 = input("Enter the path of the second file: ")
+output = input("Enter the name of the output file: ")
