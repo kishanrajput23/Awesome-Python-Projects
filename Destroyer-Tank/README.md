@@ -1,0 +1,3 @@
+## Destroyer Tank
+
+The game is played in a simple windowed black background which contain the two tanks from left blue tank(your enemy) and right pink tank(your tank). The player can control the tank via keyboard bindings (Left Arrow Key to move left, Right Arrow Key to move right, Up Arrow Key to move turret upward, Down Arrow Key to move turret downward, A keyboard key to decrease power shot, D keyboard key to increase power shot). To win the game you need to adjust your tank and turret position to target your enemy tank, reduce their health into nothing in order for you to win.
