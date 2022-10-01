@@ -1,0 +1,38 @@
+[
+    {
+        "model": "service.NewsSourceModel",
+        "fields": {
+            "name": "Times of India",
+            "code": "TOI",
+            "top_stories_url": "http://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+            "sports_url": "http://timesofindia.indiatimes.com/rssfeeds/4719148.cms",
+            "entertainment_url": "http://timesofindia.indiatimes.com/rssfeeds/1081479906.cms",
+            "business_url": "http://timesofindia.indiatimes.com/rssfeeds/1898055.cms",
+            "tech_url": "http://timesofindia.indiatimes.com/rssfeeds/5880659.cms"
+        }
+    },
+    {
+        "model": "service.NewsSourceModel",
+        "fields": {
+            "name": "CNN News",
+            "code": "CNN",
+            "top_stories_url": "http://rss.cnn.com/rss/edition.rss",
+            "sports_url": "http://rss.cnn.com/rss/edition_sport.rss",
+            "entertainment_url": "http://rss.cnn.com/rss/edition_entertainment.rss",
+            "business_url": "http://rss.cnn.com/rss/money_news_international.rss",
+            "tech_url": "http://rss.cnn.com/rss/edition_technology.rss"
+        }
+    },
+    {
+        "model": "service.NewsSourceModel",
+        "fields": {
+            "name": "BBC News",
+            "code": "BBC",
+            "top_stories_url": "http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml",
+            "sports_url": "http://feeds.bbci.co.uk/sport/rss.xml",
+            "entertainment_url": "http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
+            "business_url": "http://feeds.bbci.co.uk/news/business/rss.xml",
+            "tech_url": "http://feeds.bbci.co.uk/news/technology/rss.xml"
+        }
+    }
+]
