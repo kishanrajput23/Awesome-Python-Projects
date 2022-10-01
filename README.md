@@ -83,7 +83,7 @@ origin  https://github.com/Your_Username/Hacktoberfest-2022.git (push)
 Now, let's add a reference to the original [Hacktoberfest-2022](https://github.com/kishanrajput23/Hacktoberfest-2022/) repository using
 
 ```sh
-$ git remote add upstream https://github.com/kishanrajput23/Hacktoberfest-2022.git
+$ git remote add upstream https://github.com/kishanrajput23/Awesome-Python-Projects.git
 ```
 
 > This adds a new remote named ***upstream***.
@@ -92,18 +92,18 @@ See the changes using
 
 ```sh
 $ git remote -v
-origin    https://github.com/Your_Username/Hacktoberfest-2022.git (fetch)
-origin    https://github.com/Your_Username/Hacktoberfest-2022.git (push)
-upstream  https://github.com/Remote_Username/Hacktoberfest-2022.git (fetch)
-upstream  https://github.com/Remote_Username/Hacktoberfest-2022.git (push)
+origin    https://github.com/Your_Username/Awesome-Python-Projects.git (fetch)
+origin    https://github.com/Your_Username/Awesome-Python-Projects.git (push)
+upstream  https://github.com/Remote_Username/Awesome-Python-Projects.git (fetch)
+upstream  https://github.com/Remote_Username/Awesome-Python-Projects.git (push)
 ```
 `In your case, you will see`
 ```sh
 $ git remote -V
-origin    https://github.com/Your_Username/Hacktoberfest-2022.git (fetch)
-origin    https://github.com/Your_Username/Hacktoberfest-2022.git (push)
-upstream  https://github.com/kishanrajput23/Hacktoberfest-2022.git (fetch)
-upstream  https://github.com/kishanrajput23/Hacktoberfest-2022.git (push)
+origin    https://github.com/Your_Username/Awesome-Python-Projects.git (fetch)
+origin    https://github.com/Your_Username/Awesome-Python-Projects.git (push)
+upstream  https://github.com/kishanrajput23/Awesome-Python-Projects.git (fetch)
+upstream  https://github.com/kishanrajput23/Awesome-Python-Projects.git (push)
 ```
 
 ### 4. Sync it :recycle:
