@@ -172,8 +172,8 @@ Finally, go to your repository in the browser and click on `compare and pull req
 Then add a title and description to your pull request that explains your precious effort.
 
 ## Awesome contributors :star_struck:
-<a href="https://github.com/kishanrajput23/Hacktoberfest-2022/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=kishanrajput23/Hacktoberfest-2022" />
+<a href="https://github.com/kishanrajput23/Awesome-Python-Projects/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=kishanrajput23/Awesome-Python-Projects" />
 </a>
 
 Made with [contributors-img](https://contributors-img.web.app).
