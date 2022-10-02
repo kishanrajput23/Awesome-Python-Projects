@@ -1,2 +1,4 @@
-CAR RACE GAME in Python
+*CAR RACE GAME*
+
+made with Turtle in Python
 
