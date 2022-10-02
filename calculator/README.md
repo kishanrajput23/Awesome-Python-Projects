@@ -1,11 +1,13 @@
-# BMI Calculator
+# Basic Calculator
 
-The Body Mass Index (BMI) or Quetelet index is a value derived from the mass (weight) and height of an individual, male or female. The BMI is defined as the body mass divided by the square of the body height and is universally expressed in units of kg/m2, resulting from the mass in kilograms and height in meters. The formula is: 
+## I Have made this Calculator by Python
+
+### First of all i take the input of operator (+,-,*,/)
+
+### Then we take inout of bot operand 
+
+### Then the value goes to function as per the operand entered
  
-
-BMI = (mass or weight)/(height*height)
-where,
-mass or weight is in Kg,
-height is in meters
-
-I have made a program to calculate BMI.
+ ![Screenshot (45)](https://user-images.githubusercontent.com/78155393/193403781-2ca655e7-1ddf-4e9e-ad0c-e344fd4899dd.png)
+ 
+## Hence the result is printed
