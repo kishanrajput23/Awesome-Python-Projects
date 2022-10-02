@@ -48,7 +48,7 @@ def equalpress():
 	# by the except block
 	except:
 
-		equation.set(" error ")
+		equation.set(" error savvy! ")
 		expression = ""
 
 
