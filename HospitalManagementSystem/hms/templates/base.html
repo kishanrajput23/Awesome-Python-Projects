@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>HMS - {{ title }}</title>
+    {% else %}
+        <title>HMS</title>
+    {% endif %}
+</head>
+<body class="bg-info">
+  
+<div class="jumbotron text-center">
+  <h1 class="display-4">ABC HOSPITAL MANAGEMENT SYSTEM</h1>
+  <div class="xyz d-flex justify-content-center">
+    <div class="btn-group">
+      <button type="button" class=" abc btn  dropdown-toggle" id="pat" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Patient
+      </button>
+        <div class="dropdown-menu" aria-labelledby="pat">
+          <a class="dropdown-item" href="{{url_for('createPatient')}}">Create Patient</a><hr>
+          <a class="dropdown-item" href="{{url_for('updateQuery')}}">Update Patient</a><hr>
+          <a class="dropdown-item" href="{{url_for('deleteQuery')}}">Delete Patient</a><hr>
+          <a class="dropdown-item" href="{{url_for('allPatients')}}">Get All Patients</a><hr>
+          <a class="dropdown-item" href="{{url_for('searchQuery')}}">Search Patient</a><hr>
+          <a class="dropdown-item" href="{{url_for('billingQuery')}}">Patient Billing</a>
+        </div>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="abc btn  dropdown-toggle" id="phar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Pharmacist
+        </button>
+          <div class=" dropdown-menu" aria-labelledby="phar">
+            
+            <a class="dropdown-item" href="{{url_for('issueMedicineQuery')}}">Issue Medicines</a><hr>
+            <a class="dropdown-item" href="{{url_for('medicineInventory')}}">Inventory</a>
+          </div>
+    </div>
+    <div class="btn-group">
+          <button type="button" class="abc btn  dropdown-toggle" id="diag" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Diagnostics
+          </button>
+            <div class="dropdown-menu" aria-labelledby="diag">
+              
+              <a class="dropdown-item" href="{{url_for('issueDiagnosticQuery')}}">Issue Diagnostics</a><hr>
+              <a class="dropdown-item" href="{{url_for('diagnosticDetails')}}">Test Details</a>
+            </div>
+    </div>
+  </div>
+  {% if current_user.is_authenticated %}
+  <div class="d-flex justify-content-end">
+    <a style="color:#17a2b8;font-weight:500;font-size: 1.3rem;" href="{{url_for('logout')}}">Log out</a>
+  </div>
+  {% endif %}
+</div>
+  
+    <div  class="container">
+      <div class="row">
+        <div class="col-md-12">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+              
+                <div class="alert alert-{{ category }}">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+        
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
