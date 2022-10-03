@@ -8,3 +8,7 @@ To build the project I have used the following libraries and language :
 3. `cvzone`
 
 We are basically switching on the video and displaying the original one with changed background one just like this : 
+
+<p align = 'center'>
+<img src='https://github.com/Aryan-2003/Awesome-Python-Projects/blob/BackgroundRemoval/BackgroundRemoval/images/demo_img.png' alt='demo' height=400 width=800>
+</p>
