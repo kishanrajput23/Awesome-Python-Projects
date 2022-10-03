@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Update Patient</legend>
+
+                <div class="form-group">
+                  {{ form.patient_ssn_id.label(class="form-control-label") }}
+
+                  {% if form.patient_ssn_id.errors %}
+                      {{ form.patient_ssn_id(disabled=True,class="form-control form-control-lg is-invalid") }}
+                      <div class="invalid-feedback">
+                          {% for error in form.patient_ssn_id.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                      </div>
+                  {% else %}
+                      {{ form.patient_ssn_id(disabled=True,class="form-control form-control-lg") }}
+                  {% endif %}
+              </div>
+
+                <div class="form-group">
+                    {{ form.patient_name.label(class="form-control-label") }}
+                    {% if form.patient_name.errors %}
+                        {{ form.patient_name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.patient_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.patient_name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                  {{ form.patient_age.label(class="form-control-label") }}
+                  {% if form.patient_age.errors %}
+                      {{ form.patient_age(class="form-control form-control-lg is-invalid") }}
+                      <div class="invalid-feedback">
+                          {% for error in form.patient_age.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                      </div>
+                  {% else %}
+                      {{ form.patient_age(class="form-control form-control-lg") }}
+                  {% endif %}
+              </div>
+
+              <div class="form-group">
+               {{ form.date_of_admission.label(class="form-control-label") }}
+               {% if form.date_of_admission.errors %}
+                   {{ form.date_of_admission(class="form-control form-control-lg is-invalid") }}
+                   <div class="invalid-feedback">
+                       {% for error in form.date_of_admission.errors %}
+                           <span>{{ error }}</span>
+                       {% endfor %}
+                   </div>
+               {% else %}
+                   {{ form.date_of_admission(class="form-control form-control-lg") }}
+               {% endif %}
+           </div>
+
+           <div class="form-group">
+            {{ form.type_of_bed.label(class="form-control-label") }}
+            {% if form.type_of_bed.errors %}
+                {{ form.type_of_bed(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.type_of_bed.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.type_of_bed(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+
+
+           <div class="form-group">
+            {{ form.address.label(class="form-control-label") }}
+            {% if form.address.errors %}
+                {{ form.address(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.address.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.address(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+         {{ form.state.label(class="form-control-label") }}
+         {% if form.state.errors %}
+             {{ form.state(id="state",class="form-control form-control-lg is-invalid",onchange="myfunction()") }}
+             <div class="invalid-feedback">
+                 {% for error in form.state.errors %}
+                     <span>{{ error }}</span>
+                 {% endfor %}
+             </div>
+         {% else %}
+             {{ form.state(id="state",class="form-control form-control-lg",onchange="myfunction()") }}
+         {% endif %}
+     </div>
+
+     <div class="form-group">
+      {{ form.city.label(class="form-control-label") }}
+      {% if form.city.errors %}
+          {{ form.city(id="city",class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+              {% for error in form.city.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          </div>
+      {% else %}
+          {{ form.city(id="city",class="form-control form-control-lg") }}
+      {% endif %}
+  </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info",formnovalidate=True) }}
+            </div>
+        </form>
+    </div>
+    <script>
+        var c='{{citi}}';
+    </script>
+    <script src="{{url_for('static',filename='update.js')}}"></script>
+{% endblock content %}
+
+

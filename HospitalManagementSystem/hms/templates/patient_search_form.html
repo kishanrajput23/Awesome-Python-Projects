@@ -1,0 +1,37 @@
+{% extends "base.html"%}
+
+{% block content %}
+ 
+
+    <div class="content-section">
+        <div class="d-flex justify-content-end">
+            <span style="color:red;">Sample SSN ID:123456789</span>
+        </div>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Search Patient</legend>
+                <div class="form-group">
+                  {{ form.search.label(class="form-control-label") }}
+                  {% if form.search.errors %}
+                      {{ form.search(class="form-control form-control-lg is-invalid") }}
+                      <div class="invalid-feedback">
+                          {% for error in form.search.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                      </div>
+                  {% else %}
+                      {{ form.search(class="form-control form-control-lg") }}
+                  {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info", formnovalidate=True) }}
+            </div>
+        </form>
+
+
+
+</div>
+
+{%endblock content%}

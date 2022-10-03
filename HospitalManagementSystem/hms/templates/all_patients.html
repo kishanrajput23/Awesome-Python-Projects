@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action=""></form>
+            
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">All Patients</legend>
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Patient ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Date Of Joining</th>
+                        <th scope="col">Room Type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for patient in patients %}
+                        <tr>
+                            <th scope="row">{{ patient.ssn }}</th>
+                            <td>{{ patient.name }}</td>
+                            <td>{{ patient.age }}</td>
+                            <td>{{patient.address}}, {{patient.city}}, {{patient.state}}</td>
+                            <td>{{patient.date_of_joining.strftime('%d-%m-%Y')}}</td>
+                            <td>{{patient.room_type}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+                
+
+            </fieldset>
+            
+        </form>
+    </div>
+
+    
+    
+{% endblock content %}
+
+
