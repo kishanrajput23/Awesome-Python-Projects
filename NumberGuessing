@@ -1,0 +1,19 @@
+actual_number = 85
+attempts = 0
+
+while True:
+    attempts += 1
+    guess = int(input("Guess the Number:\n"))
+    if guess < actual_number:
+        print("Your Guess was less please increase")
+        
+    elif guess > actual_number:
+        print("Your Guess was high please decrease")
+        
+    else:
+        print(f"You guessed the number in {attempts} attempts")
+        break
+    
+printf("Thanks for Playing the Game.")
+        
+        
