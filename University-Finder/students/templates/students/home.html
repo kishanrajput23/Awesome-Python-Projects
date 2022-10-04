@@ -1,0 +1,36 @@
+{% extends 'students/main.html' %} 
+{% block content %} 
+
+<br><br>
+
+<style>
+    .typing{
+        color: purple;
+    }
+</style>
+
+<h1 style="font-family:verdana; text-align: center;">COLLEGE FINDER FOR HIGH SCHOOL AND UNDERGRADUATE STUDENTS</h1><br><br>
+
+<h2 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-align: center; color: darkblue;"> Which one could be the best college for you ?</h2> <br> <br>
+<h2 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-align: center; color: black;"> Maybe <span class="typing">Harvard</span></h2>
+
+<br><br>
+
+{% include 'students/status.html' %}
+
+<br />
+
+<script>
+    $(document).ready(function(){
+        var typed = new Typed(".typing", {
+        strings: ["Harvard", "Massachusetts Institute of Technology", "Oxford University ", "Wharton School of Business", "University of Waterloo"],
+        typeSpeed: 100,
+        backSpeed: 80,
+        loop: true
+    });
+    });
+</script>
+
+ 
+
+{% endblock %}

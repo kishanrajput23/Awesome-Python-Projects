@@ -1,0 +1,60 @@
+{% extends 'students/main.html' %} 
+{% load static %}
+{% block content %}
+
+<style>
+	.user-de{
+		margin-left: 700px;
+		margin-right: 700px;
+	}
+	#id_first_name, #id_last_name, #id_student_id, #id_email, #id_level, #id_degree_name, #sub-btn{
+		width: 100%;
+		height: 45px;
+	}
+	.usr-s{
+		background-color:skyblue;
+	}
+	#sub-btn{
+		margin-bottom: 30px;
+		background-color: green;
+		color: white;
+	}
+	#del-btn{
+		width: 100%;
+		height: 45px;
+		background-color: red;
+		color: white;
+		margin-bottom: 15px;
+	}
+</style>
+
+<section class="usr-s">
+	<br>
+	<div class="user-de">
+		<form action="" method="POST">			
+			{% csrf_token %}
+
+			{% for i in form %}
+
+				<p> {{i.label}} :</p> 
+				<p> {{i}} </p>
+				<hr>
+
+			{% endfor %}
+
+			<input type="hidden" name="para" id="para" value="data_update">
+			<input type = "submit" id="sub-btn" value = " Save ">
+
+		</form>
+		<form action="" method="POST">
+			{% csrf_token %}
+			<input type="hidden" name="para" id="para" value="delete-acc">
+			<input type="submit" name="del-btn" id="del-btn" value="Delete Account">
+		</form>
+		
+	</div>
+</section>
+
+
+{% endblock %}
+

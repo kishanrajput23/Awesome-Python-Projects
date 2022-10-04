@@ -1,0 +1,44 @@
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white mb-3" id = "total-orders">
+				<div class="card-header">
+					<h5 class="card-title">Welcome </h5>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title">{{request.user.first_name}} {{ request.user.last_name }} </h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white mb-3" id="orders-delivered">
+				<div class="card-header">
+					<h5 class="card-title">Total Users</h5>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title">{{total_users}}</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white mb-3" id = "orders-pending">
+				<div class="card-header">
+					<h5 class="card-title">Total Universities</h5>
+				</div>				
+				<div class="card-body">
+					<h3 class="card-title">{{total_university}}</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
