@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Information | Donate Now</title>
+    <style>
+        .container{
+            margin-top: 40px;
+            margin-left: 550px;
+            margin-right: 550px;
+        }
+        .head{
+            background-color: #fdf4dc;
+            height: 40px;
+            padding-top: 25px;
+            padding-left: 35px;
+        }
+        .content p{
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 30px;
+        }
+        .content b{
+            padding-top: 10px;
+        }
+        #text_field, #zip_field, #city_field, #country_field{
+            width: 100%;
+            height: 60px;
+            font-size: 18px;
+        }
+        #sec{
+            font-size: 15px;
+        }
+        #exp_head{
+            font-size: 18px;
+        }
+        #date, #month{
+            width: 48%;
+            height: 60px;
+        }
+        #auth_text{
+            font-size: 14px;
+        }
+        #btn_id{
+            border: 1px solid #DDD; 
+            text-align: center; 
+            width: 100%; 
+            height: 50px; 
+            padding-top: 20px;
+            background-color: darkblue;
+            color: white;
+        }
+        #submit_field{
+            background-color: #2e8bc0;
+            width: 100%;
+            height: 60px;
+            color: white;
+            font-size: 18px;
+        }
+        #end{
+            font-size: 20px;
+        }
+        .navbar{
+            margin-top: 50px;
+            margin-left: 300px;
+            font-size: 30px;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: black;
+        }
+        #mssg{
+            color: red;
+            font-size: 18px;
+            text-align: center;
+        }
+        /* has been used to disappear the arrows in number input type*/
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+    <!-- The amount is: {{ amount }} -->
+    <div class="navbar">
+        <a href="{% url 'landing_page' %}">University Finder</a> 
+    </div>
+    <hr>
+    <div class="container">
+        <div class="head">
+            You are donating ${{ amount }} <a style="text-decoration: none;" href="{% url 'donate_pay' %}">Change amount</a>
+        </div>
+        <div class="content">
+            <p>Your Details</p>
+            {% for message in messages %}
+                    <p id="mssg">{{ message }}</p>
+            {% endfor %}
+            <form action="" method="POST">
+                {% csrf_token %}
+                <span id="label"><b>Email</b><br></span><br>
+                <input type="text" name="email" id="text_field"><br><br>
+                <span id="label"><b>First Name</b><br></span><br>
+                <input type="text" name="f_name" id="text_field"><br><br>
+                <span id="label"><b>Last Name</b><br></span><br>
+                <input type="text" name="l_name" id="text_field"><br><br>
+                <span id="label"><b>Street</b><br></span><br>
+                <input type="text" name="street" id="text_field"><br><br>
+                <b>Zip Code</b><br><br>
+                <input type="number" name="zip_code" id="zip_field"><br><br>
+                <b>City</b><br><br>
+                <input type="text" name="city_name" id="city_field"><br><br>
+                <b>Country</b><br><br>
+                <select name="country_name" id="country_field">
+                    <option value="United States of America">United States of America</option>
+                    <option value="India">India</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                </select>
+
+                <p>Payment&nbsp&nbsp<img src="https://image.flaticon.com/icons/png/512/61/61457.png" width="20px" height="20px" alt=""><span id="sec">Secure</span></p>
+                
+                <b>Card number</b><br><br><br>
+                <input type="number" name="card_number" id="text_field"><br>
+                <p>
+                    <b><span id="exp_head">Expiration Date:</span></b><br><br>
+                    <select name="date" id="date">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select name="month" id="month">
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                    </select>
+                </p>
+                <b>CVV</b><br><br>
+                <input type="number" name="CVV" id="text_field"><br><br>
+                <b id="auth_text">I authorize the University Finder Website to charge my card in the amount indicated above. I understand that I may only request a refund within 15 days from the date of the donation.</b>
+                <br><br>
+                <input type="submit" value="Donate ${{ amount }}" id="submit_field">             
+            </form>
+
+            <p id="end">Your donation helps keep the Web open and free. Thank you in advance for your gift.</p>
+        </div>
+    </div>
+</body>
+</html>

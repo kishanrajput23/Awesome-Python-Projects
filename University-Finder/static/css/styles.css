@@ -1,0 +1,353 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Landing page code */
+.landing{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: relative;
+}
+
+.landing img{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.25;
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 100px;
+}
+
+.logo{
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+.navbar ul li{
+    display: inline-block; 
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navbar ul li:hover{
+    border-bottom: 2px solid white;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Main screen content */
+.content {
+    position: absolute;
+    text-align: center;
+    max-width: 100%;
+    top: 40%;
+    color: white;
+    padding: 0 10%;
+}
+
+.content h2{
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+
+.content p{
+    font-size: 20px;
+}
+
+/* About Us section */
+.aboutus{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    transition: all 1s ease-in-out;
+}
+
+.content-about, .aboutus img{
+    width: 50%;
+}
+
+.content-about {
+    background-color: rgb(27, 27, 90);
+    color: white;
+    text-align: center;
+    padding: 100px;
+}
+
+.content-about h2{
+    font-size: 16px;
+    margin: 10px 0px;
+}
+
+.content-about p{
+    font-size: 16px;
+}
+
+/* Domains section */
+.domains {
+    background-color: rgb(29, 29, 75);
+    color: white;
+    padding: 100px;
+    text-align: center;
+    height: 100vh;
+    transition: all .8s ease-in-out;
+}
+
+.domains h2{
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.domains p{
+    font-size: 16px;
+}
+
+.container{
+    width: 80%;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* Cards in domains section*/
+.card{
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 10px 0;
+}
+
+.card:hover{
+    background-color: #fff2ac;
+    background-image: linear-gradient(to right, #5462e4 0%, #8f9fd4 100%);
+}
+
+.card img{
+    width: 100%;
+    height: 220px;
+}
+
+.card h3{
+    padding: 10px;
+    padding-top: 0;
+}
+
+/* Contact us section*/
+.contact {
+    background-color: rgb(62, 62, 131);
+    padding: 100px;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    transition: all .8s ease-in-out;
+}
+
+.contact-div{
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.contact-div img{
+    width: 50%;
+}
+
+/* Form styling in contact us*/
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: cyan;
+    padding: 50px;
+}
+
+form input, form textarea{
+    margin: 10px 0;
+    background: cyan;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid white;
+    color: black;
+    font-size: 14px;
+}
+
+form button{
+    border: 2px solid white;
+    outline: none;
+    background: cyan;
+    padding: 7px 15px;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+form button:hover{
+    background-color: white;
+    color: cyan;
+}
+
+/* Footer styling */
+.footer{
+    background-color: black;
+    color: white;
+    padding: 20px 15%;
+    text-align: center;
+}
+
+/* University section styling*/
+.univs {
+    background-color: lightgreen;
+    color: darkblue;
+    padding: 100px;
+    text-align: center;
+    height: 100vh;
+    transition: all .8s ease-in-out;
+}
+
+.univs h2{
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.univs p{
+    font-size: 26px;
+}
+
+.cntr {
+    width: 80%;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.crd h3{
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.crd p{
+    margin-top: 40px;
+    font-size: 27px;
+}
+
+.crd {
+    border-radius: 20px;
+    margin: 30px;
+    padding: 10px 0;
+}
+
+/* Responsive styling */
+@media only screen and (max-width: 600px) {
+    /* Navabar */ 
+    .navbar ul{
+        display: none;
+    }    
+
+    .navbar a{
+        margin: 0 auto;
+        text-align: center;
+    }
+    /* Main content*/
+    .content{
+        top: 20%;
+    }
+    .content h2{
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .content p{
+        font-size: 18px;
+    }
+
+    .content-about, .aboutus img{
+        width: 100%;
+    }
+
+    .content-about{
+        padding: 10px;
+    }
+
+    /* About Us */
+    .aboutus{
+        flex-direction: column;
+        height: auto;
+    }    
+
+    /* Domains*/
+    .domains{
+        padding: 15px;
+        height: auto;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .card{
+        margin: 10px;
+        margin-bottom: 20px;
+    }
+
+    .contact{
+        padding: 15px;
+        height: auto;
+    }
+
+    .contact-div{
+        flex-direction: column;
+    }
+
+    .contact-div img, form{
+        width: 100%;
+    }
+
+    .univs {
+        height: auto;
+    }
+
+    .cntr {
+        flex-direction: column;
+    }
+
+    .crd {
+        margin-bottom: 20px;
+    }
+
+    .if {
+        height: 250px;
+        width: 300px;
+        margin-left: -70px;
+    }
+
+    .crd p{
+        text-align: center;
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+        }
+        .pay {
+            width: 50%;
+            margin-top: 70px;
+            
+        }
+        .photo{
+            width: 50%;
+            margin-top: 100px;
+        }
+        .photo img{
+            margin-left: 500px;
+        }
+        .photo p{
+            width: 350px;
+            margin-left: 500px;
+            text-align: right;
+        }
+
+        #id_inp_amt{
+            width: 300px;
+            height: 70px;
+            font-size: 18px;
+        }
+
+        h3 span{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+        }
+        h1 {
+            padding-left: 30px;
+        }
+        h3 {
+            padding-left: 60px;
+        }
+
+        #dollar{
+            padding: 10px;
+            font-size: 25px;
+        }
+        #id_sub_btn{
+            width: 300px;
+            height: 40px;
+            background-color:darkblue;
+            color: white;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            margin-left: 42px;
+            width: 315px;
+            height: 50px;
+        }
+        .navbar{
+            margin-top: 50px;
+            margin-left: 300px;
+            font-size: 30px;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: black;
+        }
+        #mssg{
+            margin-left:30px;
+            color: red;
+        }
+        /* has been used to disappear the arrows in number input type*/
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'landing_page' %}">University Finder</a> 
+    </div>
+    <hr>
+    <div class="container">        
+        <div class="photo">
+            <img src="https://miro.medium.com/max/3640/1*0ESRdJgzIKVIKsvmzPEWnQ.jpeg" height="250" width="350" alt="">
+            <p><b>We are proudly non-profit, </b>non-corporate and non-compromised.
+            Thousands of people like you help us stand up for a healthy internet for all. 
+            We rely on donations to carry out our mission to keep the Web open and free.
+            <b>Will you give today?</b></p>
+        </div>
+        <div class="pay">
+            <h1>Donate now</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <span id="dollar">$</span><input type="number" value="Enter a Amount" name="amount" id="id_inp_amt">
+                {% for message in messages %}
+                    <p id="mssg">{{ message }}</p>
+                {% endfor %}
+                <h3>Confirm Payment&nbsp<img src="https://cdn.icon-icons.com/icons2/2440/PNG/512/lock_icon_148524.png" width="20px" height="20px" alt=""><span>Secure</span></h3>
+                <input type="submit" value="Pay Now" id="id_sub_btn">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
