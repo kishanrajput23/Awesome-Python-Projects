@@ -1,0 +1,7 @@
+num=int(input("Enter any Number:"))
+
+n=str(num)
+print(type(n))
+s= "%s" %num
+print(s)
+print(type(s))
