@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+
+
+
+
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Patient Details</legend>
+
+                <div class="form-group">
+                  {{ form.patient_ssn_id.label(class="form-control-label") }}
+                  <b>{{ p.ssn }}</b>
+                  
+              </div>
+
+                <div class="form-group">
+                    {{ form.patient_name.label(class="form-control-label") }}
+                    <b>{{ p.name }}</b>
+                </div>
+
+                <div class="form-group">
+                  {{ form.patient_age.label(class="form-control-label") }}
+                  <b>{{ p.age }}</b>
+              </div>
+
+              <div class="form-group">
+               {{ form.date_of_admission.label(class="form-control-label") }}
+               <b>{{ p.admission.strftime('%d-%m-%Y')}}</b>
+           </div>
+
+           <div class="form-group">
+            {{ form.type_of_bed.label(class="form-control-label") }}
+            <b>{{ p.bed }}</b>
+        </div>
+
+
+           <div class="form-group">
+            {{ form.address.label(class="form-control-label") }}
+            <b>{{ p.address }}</b>
+        </div>
+
+        <div class="form-group">
+         {{ form.state.label(class="form-control-label") }}
+         <b>{{ p.state }}</b>
+     </div>
+
+     <div class="form-group">
+      {{ form.city.label(class="form-control-label") }}
+      <b>{{ p.city }}</b>
+  </div>
+                
+
+                
+                
+                
+            </fieldset>
+            
+        </form>
+    </div>
+
+ 
+    
+{% endblock content %}
+
+
