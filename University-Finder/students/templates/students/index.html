@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!-- vscode://vscode.github-authentication/did-authenticate?windowid=1&code=1b294e172edc68aa3dfc&state=1a1e85e7-0b09-4582-bd33-e96c8393a1f0 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>University Finder</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+
+    <!-- This is the code for the main landing page when the website is first opened-->
+    <div class="landing">
+        <img src="{% static 'images/pic.jpg' %}" alt="">
+        <!-- Below is code for the navigation bar -->
+        <div class="navbar">
+            <a href="#" class="logo">University Finder</a>
+            <ul>
+                <li><a href="{% url 'donate_pay' %}">Donate Now</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#dm">Features</a></li>
+                <li><a href="#cnt">Contact</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </div>
+
+        <!-- The content that is shown after the navgation bar-->
+        <div class="content">
+            <h2>Welcome to our Website</h2>
+            <p>The main aim of this website is to help the aspiring high school and undergraduate students to find the most suitable universities for their study.</p>
+        </div>
+
+    </div>
+
+    <!-- This is the about us section where the motivation of our project is told-->
+    <section id="about" class="aboutus">
+        <div class="content-about">
+            <h2>About Us</h2>
+            <p>During their lifetime, most students who complete a decent level of education has to go through the hurdle of finding the right college which focus on their morals and spirations.</p>
+            <br><br>
+            <p>Due to lack of knowledge and public opinion a great number of them end up regretting later in life by enrolling in something which wasn’t meant for them. With the progress of internet through outthe country, in recent years.</p>
+            <br><br>
+            <p>During our times, we had to endure such problems and the only solution we could find was speaking directly with the current students of a particular university we’re hoping to get in. To cater this problem, we’re working on this project.</p>
+            <br><br>
+            <p>The primary objective is to create a website which allows every user to create their own personalized profile so that each list is unique and individuality of the collection of colleges based on their interest can be achieved.</p>
+        </div>
+        <img src="{% static 'images/team.png' %}" alt="">
+    </section>
+
+    <!-- This section tells some of the salient features of the website-->
+    <section id="dm" class="domains">
+        <h2>Our Features</h2>
+        <p>Some of the most important and good features that our site can provide to the aspiring high school and under graduates students are listed below.</p>
+        <div class="container">
+            <div class="card">
+                <h3>Easy Login</h3>
+                <img src="{% static 'images/design.png' %}" alt="Design Image">
+                <p><i>"Students can easily login and signup without any problem."</i></p>
+            </div>
+            <div class="card">
+                <h3>Easy To Use</h3>
+                <img src="{% static 'images/tech.png' %}" alt="Technology Image">
+                <p><i>"The website has been designed as per the ease of the user."</i></p>
+            </div>
+            <div class="card">
+                <h3>Saves Time</h3>
+                <img src="{% static 'images/mgmt.png' %}" alt="Management Image">
+                <p><i>"It will save your time as you can get and see everything at one place."</i></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- This shows the website of some leading universities -->
+    <section class="univs">
+        <h2>Top Universities</h2>
+        <p>These are some of the leading universities in their respective fields. </p>
+        <div class="cntr">
+            <div class="crd">
+                <h3>MIT</h3>
+                <iframe class = "if" src="https://www.mit.edu/" height="300" width="400" title="Standford Website"></iframe>
+                <p>Technology</p>  
+            </div>       
+                 
+            <div class="crd">
+                <h3>Georgetown University</h3>
+                <iframe class = "if" src="https://www.georgetown.edu/" height="300" width="400" title="Oxford Website"></iframe>
+                <p>Law and Management</p>
+            </div>
+
+            <div class="crd">
+                <h3>Harvard University</h3>
+                <iframe class = "if" src="https://www.harvard.edu/" height="300" width="400" title="Harvard Website"></iframe>
+                <p>Medical Sciences</p>
+            </div>  
+        </div>
+    </section>
+
+    <!-- Contact detail of user can be provided here -->
+    <section id="cnt" class="contact">
+        <h3>Contact Us</h3>
+        <p>If you are facing any type of problem or if there is any issue please feel free to contact us.</p>
+        <div class="contact-div">
+            <img src="{% static 'images/contact.png' %}" alt="">
+            <form>
+                <input type="text" placeholder="Enter your name">
+                <input type="email" placeholder="Enter your email">
+                <input type="text" placeholder="Enter your phone">
+                <textarea placeholder="Enter your question"></textarea>
+                <button>Submit</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <!-- The footer of our webpage-->
+    <div class="footer">
+        <h2>Made by: Kaustubh Shrivastava and Paritosh Pandey</h2>
+    </div>
+
+
+</body>
+</html>

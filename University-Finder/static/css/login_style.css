@@ -1,0 +1,194 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #EEFBFB;
+}
+/* Main Page */
+.main{    
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    margin: 30px auto;
+    width: 70%;
+    height: 400px;
+}
+
+.text, .login-form{
+    width: 50%;
+}
+
+.head a:link{
+    text-decoration: none;
+    color: black;
+}
+
+.head a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.head a{
+    font-size: 40px;
+}
+
+.text{
+    margin-right: 50px;
+}
+
+/* Form styling */
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: white;
+    width: 80%;
+    height: 250px;
+}
+
+form input{
+    margin: 5px;
+}
+
+.login, .new-acc{
+    border: none;
+    outline: none;
+}
+
+.login {
+    height: 70px;
+    margin: 5px;
+    background-color: blue;
+    border-radius: 7px;
+    padding: 5px;
+    color: white;
+
+}
+
+a{
+    font-size: 12px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+hr{
+    margin: 5px 0;
+}
+
+.new-acc a:link{
+    text-decoration: none;
+    color: white;
+}
+
+.new-acc a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.new-acc{
+    height: 70px;
+    width: 150px;
+    font-size: 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: green;
+    border-radius: 7px;
+    padding: 5px;
+    color: white;
+}
+
+.create{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 100px;
+}
+
+/* Advertisement styling */
+.slideshow {
+    position: relative;
+    margin: auto;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active {
+    background-color: yellow;
+}
+
+.slide img{
+    width: 280px;
+    height: 265px;
+    margin-left: 100px;
+}
+
+.dots {
+    margin-left: 200px;
+}
+
+.vid, .images {
+    width: 33%;
+}
+
+.vid {
+    text-align: center;
+}
+
+.ad {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Responsive styling */
+
+@media only screen and (max-width: 600px) {
+    .text, .login-form {
+        width: 100%;
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text p{
+        margin-bottom: 40px;
+    }
+
+    .create {
+        padding-left: 40px;
+    }
+
+    .text h2{
+        text-align: center;
+    }
+
+    .login-form{
+        align-items: center;
+    }
+
+    .ad {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vid {
+        margin-top: 200px;
+        margin-left: 65px;
+    }
+
+    .img2 {
+        margin-left: 50px;
+        margin-bottom: 40px;
+    }
+}
