@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="content-section">
+    <legend class="border-bottom mb-4">Diagnostic</legend>
+    <div>
+        <h4 class="text-center mt-3">Test Details</h4>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Test Name</th>
+                  <th scope="col">Amount</th>              
+                </tr>
+            </thead>
+            <tbody>
+                {% for test in tests %}
+                <tr>
+                    
+                    <th scope="row">{{ test.name }}</th>
+                    <td>{{ test.charge }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+  
+    
+
+
+</div>
+
+
+
+
+{%endblock content%}

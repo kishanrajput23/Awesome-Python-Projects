@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+
+
+
+
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete Patient</legend>
+
+                <div class="form-group">
+                  {{ form.patient_ssn_id.label(class="form-control-label") }}
+                  <b>{{ p.ssn }}</b>
+                  
+              </div>
+
+                <div class="form-group">
+                    {{ form.patient_name.label(class="form-control-label") }}
+                    <b>{{ p.name }}</b>
+                </div>
+
+                <div class="form-group">
+                  {{ form.patient_age.label(class="form-control-label") }}
+                  <b>{{ p.age }}</b>
+              </div>
+
+              <div class="form-group">
+               {{ form.date_of_admission.label(class="form-control-label") }}
+               <b>{{ p.admission.strftime('%d-%m-%Y') }}</b>
+           </div>
+
+           <div class="form-group">
+            {{ form.type_of_bed.label(class="form-control-label") }}
+            <b>{{ p.bed }}</b>
+        </div>
+
+
+           <div class="form-group">
+            {{ form.address.label(class="form-control-label") }}
+            <b>{{ p.address }}</b>
+        </div>
+
+        <div class="form-group">
+         {{ form.state.label(class="form-control-label") }}
+         <b>{{ p.state }}</b>
+     </div>
+
+     <div class="form-group">
+      {{ form.city.label(class="form-control-label") }}
+      <b>{{ p.city }}</b>
+  </div>
+                
+
+                
+                
+                
+            </fieldset>
+            <div class="form-group">
+                <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+            </div>
+        </form>
+    </div>
+
+     <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Patient?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{{ url_for('deletePatient', ssn=p.ssn) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+{% endblock content %}
+
+

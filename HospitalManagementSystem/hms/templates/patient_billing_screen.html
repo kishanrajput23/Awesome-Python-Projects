@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block content%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<div  class="content-section">
+    <legend class="border-bottom mb-4">Bill Details</legend>
+    <div  id="receipt">
+        <div id="hms"><h1 class="text-center">ABC HOSPITAL</h1></div>
+        <h5 class="ml-2">Date of Bill: {{date.strftime('%d-%m-%Y')}}</h5>
+        <div class="mt-3">
+            <h4 class="text-center mt-3">Patient Billing</h4>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Patient ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Age</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Date Of Join</th>
+                      <th scope="col">Room Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ patient.ssn }}</th>
+                        <td>{{ patient.name }}</td>
+                        <td>{{ patient.age }}</td>
+                        <td>{{patient.address}}, {{patient.city}}, {{patient.state}}</td>
+                        <td>{{patient.date_of_joining.strftime('%d-%m-%Y')}}</td>
+                        <td>{{patient.room_type}}</td>
+                    </tr>
+                    <tr class="text-center">
+                        <td   colspan="6"><span class="mr-5">Number of days: <strong>{{room_rent_details['days']}}</strong></span><span class="ml-5">Room Rent: <strong>{{room_rent_details['room_rent']}}</strong></span></p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        
+        <div class="mt-3">
+            <table class="table">
+                <h4 class="text-center mt-3">Pharmacy Charges</h4>
+                <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Medicine Name</th>
+                      <th scope="col">Quantity Issued</th>
+                      <th scope="col">Rate</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for med in medicine %}
+                    <tr>
+                        <th scope="row">{{ med.name }}</th>
+                        <td>{{ med.quantity }}</td>
+                        <td>{{ med.rate }}</td>
+                        <td>{{med.amount}}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <th>Bill For Pharmacy</th>
+                        <td></td>
+                        <td></td>
+                        <th>{{ bill.bill_for_pharmacy }}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        
+        <div class="mt-3">
+            <table class="table">
+                <h4 class="text-center mt-3">Diagnostic Charges</h4>
+                <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Test Name</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                </thead>
+                  <tbody>
+                    {% for test in diagnostic %}
+                    <tr>
+                        <th scope="row">{{ test.name }}</th>
+                        <td>{{test.amount}}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        
+                        <th scope="row">Bill For Diagnostic</th>
+                        <th>{{ bill.bill_for_diagnostic }}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+    
+    
+    
+        <div class="mt-3">
+            <table class="table">
+                <h4 class="text-center mt-3">Total Bill</h4>
+                <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Bill Type</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Room Rent</td>
+                        <td>{{room_rent_details['room_rent']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Pharmacy</td>
+                        <td>{{bill['bill_for_pharmacy']}}</td>
+                    </tr>
+                    <tr>
+                        <td >Diagnostics</td>
+                        <td>{{bill['bill_for_diagnostic']}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total Payable Bill</th>
+                        <td><strong>{{payable_bill}}</td></strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="d-flex justify-content-center">
+        <button  class="btn bg-dark text-white mt-1" onclick="generatePDF()">Click Here To Download Receipt</button>
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+document.getElementById("hms").style.display='none';
+function generatePDF(){ 
+
+    document.getElementById("hms").style.display='block';
+    html2canvas(document.querySelector('#receipt'), {
+        onrendered:function(canvas){
+			var doc = new jsPDF();
+			doc.addImage(canvas.toDataURL('image/png'), 'JPEG', 0,0,211,298);
+			doc.save('receipt.pdf');
+            document.getElementById("hms").style.display='none';
+		}
+    });
+}
+</script>
+
+{%endblock content%}

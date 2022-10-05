@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="content-section">
+    <legend class="border-bottom mb-4">Pharmacy</legend>
+    <div>
+        <h4 class="text-center mt-3">Inventory</h4>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Medicine Name</th>
+                  <th scope="col">Quantity Available</th>
+                  <th scope="col">Rate</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                {% for medicine in medicines %}
+                <tr>
+                    
+                    <th scope="row">{{ medicine.name }}</th>
+                    <td>{{ medicine.quantity_available }}</td>
+                    <td>{{medicine.rate}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+  
+    
+
+
+</div>
+
+
+
+
+{%endblock content%}
