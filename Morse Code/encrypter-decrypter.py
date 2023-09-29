@@ -20,11 +20,8 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
 def encrypt(message):
     cipher = ''
     for letter in message:
-        if letter != ' ':
-            cipher += MORSE_CODE_DICT[letter] + ' '
-        else:
-            cipher += ' '
-  
+        cipher += MORSE_CODE_DICT[letter] + ' ' if letter != ' ' else ' '
+       
     return cipher
   
 
