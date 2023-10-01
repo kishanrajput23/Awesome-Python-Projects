@@ -1,12 +1,11 @@
-# This repository is no longer accepting new PR's. Please don't contribute in this repository.
+#  Hacktoberfest 2023 Is Awesome🔥
+<img width="1440" alt="image" src="https://github.com/kishanrajput23/Awesome-Python-Projects/assets/70385488/e5cb69c8-8e6d-4625-8573-1e168cedcf69">
 
-#  Hacktoberfest 2022 Is Awesome🔥
-![image](https://user-images.githubusercontent.com/70385488/192114009-0830321a-d227-4a4d-8411-6c03b54d7ce6.png)
 
 <div align="center">
 
-[![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/kishanrajput23/Hacktoberfest-2022)
-<img src="https://img.shields.io/badge/HacktoberFest-2022-blueviolet" alt="Hacktober Badge"/>
+[![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/kishanrajput23/Hacktoberfest-2023)
+<img src="https://img.shields.io/badge/HacktoberFest-2023-blueviolet" alt="Hacktober Badge"/>
 <img src="https://img.shields.io/static/v1?label=%E2%AD%90&message=If%20Useful&style=style=flat&color=BC4E99" alt="Star Badge"/>
 <a href="https://github.com/kishanrajput23" ><img src="https://img.shields.io/badge/Contributions-welcome-green.svg?style=flat&logo=github" alt="Contributions" /></a>
 
