@@ -11,7 +11,7 @@ The Currency Converter is an interactive Python program that allows users to con
 
 ## Usage
 
-1. Run the `currency_converter.py` script.
+1. Run the `Currency_Converter.py` script.
 2. Enter the amount to convert.
 3. Select the source currency (e.g., USD).
 4. Choose the target currency (e.g., EUR).
