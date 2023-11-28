@@ -1,0 +1,13 @@
+Key.esc                      - Esc
+Win Key.f1                   - Help,f1
+<255>                        - brighteness_increase,f2          
+<255>                        - brightness_decrease,f3
+Win p                        - projecter options,f4
+m                            - browser,f5
+Key.insert                   - insert button
+Key.delete                   - delete button
+Key.home                     - move to home page 
+Key.page_up                  - move towards the first page
+Key.page_down                - move towards the bottom page
+Key.end                      - move cursor to the last letter
+Key.menu                     - menu button

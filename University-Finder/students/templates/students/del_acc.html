@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+    <title>University Finder</title>
+    <style>
+        body{
+            font-family: 'Poppins', sans-serif;
+            background-color: orange;
+        }
+       .app{
+            margin-top: 50px;
+            margin-left: 300px;
+            font-size: 30px;
+       }
+       .app a{
+            text-decoration: none;
+            color: rgb(70, 63, 63);
+            font-size: 40px;
+        }
+        .content{
+            margin-left: 600px;
+            margin-right: 600px;
+            border: 1px solid black;
+            padding: 25px;
+            padding-bottom: 100px;
+            padding-top: 40px;
+            background-color: white;
+        }
+        .content p{
+            line-height: 20px;            
+        }
+        #res{
+            width: 270px;
+        }
+        #sub{
+            margin-top: 30px;
+            background-color: brown;
+            width: 270px;
+            height: 45px;
+            color: white;
+        }
+        h1, h2{
+            color: black;
+        }
+
+        p{
+            color: blue;
+            font-weight: bolder;
+        }
+        #name{
+            color: brown;
+            font-weight: bolder;
+            
+        }
+        #frm{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <a href="{% url 'landing_page' %}">University Finder</a> 
+    </div>
+    <hr>
+    <br>
+    <div class="content">
+    
+        <h1> Delete Your Account </h1>
+        <p>Hi <span id="name"><b>{{name}}</b></span>,</p>
+        <p>We are sorry to hear you would like to delete your account.</p>
+        <p>Your account has been deleted successfully.</p>
+
+        <h2> Keeping Your Data Safe</h2>
+        <p> Nothing is more important to us but you keep your data safe and secure in our University Finder Website.<br><br> Please put your trust on us as we shall make no compromises on it.</br></p>
+        
+        <hr>
+
+        <h3>Why are you deleting your account?</h3><br>
+        <form action="" method="POST" id="frm">
+            {% csrf_token %}
+            <select class="option" id="res" name="reason">
+                <option>Unsatisfied </option>
+                <option>Service Not Good </option>
+                <option>Rather Not Specify</option>
+            </select><br><br>
+
+            <input id="sub" type="submit" value="Go To Home">
+        </form>
+    </div>
+
+</body>
+</html>

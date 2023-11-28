@@ -1,0 +1,5 @@
+Flask
+Pillow
+pymysql
+opencv_python
+requests

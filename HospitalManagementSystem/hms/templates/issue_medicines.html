@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="content-section">
+    <legend class="border-bottom mb-4">Pharmacy</legend>
+    <div>
+        <h4 class="text-center mt-3">Patient Detail</h4>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Patient ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Date Of Join</th>
+                  <th scope="col">Room Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{ patient.ssn }}</th>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.age }}</td>
+                    <td>{{patient.address}}, {{patient.city}}, {{patient.state}}</td>
+                    <td>{{patient.date_of_joining.strftime('%d-%m-%Y')}}</td>
+                    <td>{{patient.room_type}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <div>
+        <table class="table">
+            <h4 class="text-center mt-3">Medicine Issued</h4>
+            <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Medicine Name</th>
+                  <th scope="col">Quantity Issued</th>
+                  <th scope="col">Rate</th>
+                  <th scope="col">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for med in issued_medicines %}
+                <tr>
+                    <th scope="row">{{ med.name }}</th>
+                    <td>{{ med.quantity }}</td>
+                    <td>{{ med.rate }}</td>
+                    <td>{{med.amount}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <button id="but" class="mb-3 text-white btn btn-md bg-dark" onclick="myFunction()">ADD</button>
+    
+
+    
+
+
+
+    <form method="POST" action="" id="myDIV" style="display:none;">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Enter Medicine Detail</legend>
+            <div class="form-group">
+              {{ form.name.label(class="form-control-label") }}
+              {% if form.name.errors %}
+                  {{ form.name(id="name",class="form-control form-control-lg is-invalid",autocomplete="off",list="medicine_list") }}
+                  <datalist id="medicine_list">
+                    {%for item in all_medicines%}  
+                        <option value='{{item.name}}'>{{item.name}}</option>
+                    {% endfor %}
+                </datalist>
+                  <div class="invalid-feedback">
+                      {% for error in form.name.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ form.name(id="name",class="form-control form-control-lg",autocomplete="off",list="medicine_list") }}
+                  <datalist id="medicine_list">
+                    {%for item in all_medicines%}  
+                        <option value='{{item.name}}'>{{item.name}}</option>
+                    {% endfor %}
+                </datalist>
+              {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.quantity.label(class="form-control-label") }}
+                {% if form.quantity.errors %}
+                    {{ form.quantity(id="quantity",class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.quantity.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.quantity(id="quantity",class="form-control form-control-lg") }}
+                {% endif %}
+              </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info", formnovalidate=True) }}
+        </div>
+    </form>
+
+
+
+</div>
+
+<script>
+    var t='{{type}}';
+    if(t=='get'){
+        document.getElementById("myDIV").style.display="none";
+        document.getElementById("but").innerHTML="Add"
+    }
+    else{
+        document.getElementById("but").innerHTML="Cancel"
+        document.getElementById("myDIV").style.display="block";
+    }
+    function myFunction() {
+    
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        document.getElementById("but").innerHTML="Cancel"
+      } else {
+        x.style.display = "none";
+        document.getElementById("but").innerHTML="Add"
+      }
+      document.getElementById("name").value="";
+      document.getElementById("quantity").value="";
+      document.getElementById("name").classList.remove("is-invalid");
+      document.getElementById("quantity").classList.remove("is-invalid");
+    }
+    </script>
+
+
+{%endblock content%}
