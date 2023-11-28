@@ -1,0 +1,122 @@
+{%  extends 'students/main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+	.univ-info-s{
+		height: 100vh;
+	}
+	#id_univ_name{
+		width: 400px;
+		height: 60px;
+	}
+	#web{
+		width: 500px;
+		margin-top: 50px;
+	}
+	#courses{
+		width: 500px;
+		margin-left: 300px;
+		margin-top: 50px;
+	}
+	#bdy{
+		text-align: center;
+	}
+</style>
+
+<br>
+	<section class="univ-info-s">
+	<div class="row">
+		<div class="col">
+			<div class="card card-body" id="bdy">
+				<form method="get">
+
+					<!-- {% for i in myFil.form %} -->
+
+						<p> {{ myFil.form.as_p }} </p>
+						
+						<hr>
+
+					<!-- {% endfor %} <p >{{ i }}</p> -->
+
+				<button class="btn btn-primary" type="submit">Search</button>
+			</form>
+			</div>
+		</div>
+		
+	</div>
+	<br>
+	<div class="row">
+
+			<div class="col">
+				<div class="col-md">
+					<div class="card text-center text-white mb-3" id = "total-orders">
+						<div class="card-header">
+							<h5 class="card-title"><b>Number of Research Papers Released every Year</b></h5>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">{{ m.research_paper }}</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="col-md">
+					<div class="card text-center text-white mb-3" id = "total-orders">
+						<div class="card-header">
+							<h5 class="card-title"><b>Companies Visiting Campus for Placements</b></h5>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">{{ m.comp_visit }} </h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="col-md">
+					<div class="card text-center text-white mb-3" id = "total-orders">
+						<div class="card-header">
+							<h5 class="card-title"><b>Placement Percentage</b></h5>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">{{ m.placement_percent }} </h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col">
+				<div class="col-md" id="courses">
+					<div class="card text-center text-white mb-3" id = "total-orders">
+						<div class="card-header">
+							<h5 class="card-title"><b>Courses Available</b></h5>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">{{ m.courses_available }} </h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="col-md" id="web">
+					<div class="card text-center text-white mb-3" id = "total-orders">
+						<div class="card-header">
+							<h5 class="card-title"><b>Website Link</b></h5>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title"><a style = "text-decoration: none; color: white;" target="_blank" href = "{{ m.web }}"> {{ m.web }} </a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+</section>
+{% endblock %}

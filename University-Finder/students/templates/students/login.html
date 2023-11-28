@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login_style.css' %}"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- The font has been taken from google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+    <title>Login to University Finder</title>
+
+</head>
+<body>
+
+    <!-- This is the main section where the text and the form will be shown -->
+    <div class="main">
+        <!-- The text section which takes the left part of the screen-->
+        <div class="text">
+            <h2 class="head"><a href="{% url 'landing_page' %}"> University Finder </a></h2>
+            <br><br>
+            <p>University Finder helps you to find the best college for your higher studies be it a high schooler or an undergraduate.</p>
+        </div>
+        <!-- This is the login section which takes data in form-->
+        <div class="login-form">
+            <form method="POST" action="" onsubmit="func();">
+                {% csrf_token %}
+                
+                <input type="text" name="username" placeholder="Enter username">
+                <input type="password" name="password" placeholder="Enter password">
+                <input type="submit" class="login" value="Log In">
+                {% for message in messages %}
+                    <center><p id="messages"> {{message}} </p></center> 
+                {% endfor %}
+                <!-- <button class="login">Log In</button> -->
+                <a href="">Forgotten Password?</a>
+                <hr>
+                
+                <button class="new-acc"><a href="{% url 'register' %}">Create New Account</a></button>
+            </form>
+            <p class="create">Login here to start your wonderful experience.</p>
+        </div>
+    </div>
+
+    <!-- This division will show the advertisements-->
+    <div class="ad">
+        <!-- First the video advertisement-->
+        <div class="vid">
+            <video width="320" height="240" controls loop muted autoplay>
+                <source src="{% static 'videos/ad.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Second is the image that keeps changing in 6 seconds-->
+        <div class="images">
+            <div class="slideshow">
+                <div class="slide">
+                    <img src="{% static 'images/ad1.png' %}" usemap="#workmap">
+                    <map name="workmap">
+                        <area shape="rect" coords="64, 34, 200, 144" alt="Computer" href="https://www.amazon.in/Duracell-Alkaline-Battery-Duralock-Technology/dp/B014SZO90Y/ref=sr_1_3?dchild=1&keywords=duracell+battery&qid=1616366233&sr=8-3">
+                    </map> 
+                </div>
+                <div class="slide">
+                    <img src="{% static 'images/mgmt.png' %}">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'images/tech.png' %}">
+                </div>
+            </div>
+            <br>
+            <!-- The dots beneath the image also changess-->
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <!-- Another video advertisement is shown on the screen-->
+        <div class="img2">
+            <a href="https://google.com">
+                <video width="350" height="250" controls loop muted autoplay>
+                    <source src="{% static 'videos/vidad2.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </a>
+        </div>
+    </div>
+    <!-- linking the javascript file -->
+    <script src="{% static 'js/login.js' %}"></script>
+</body>
+
+</html>

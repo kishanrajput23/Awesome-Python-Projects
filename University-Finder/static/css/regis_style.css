@@ -1,0 +1,184 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* Main Page styling */
+.main{
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 400px;
+    background-color: #e79a4e;
+}
+/* header styling */
+.head{
+    margin-bottom: 25px;
+    color: whitesmoke;
+}
+
+.head a:link{
+    text-decoration: none;
+    color: white;
+}
+
+.head a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+/* Button styling  */
+.b{
+    margin-left: 550px;
+}
+
+.but {
+    
+    background-color: orange;
+    margin-top: 5px;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 16px;    
+    cursor: pointer;
+}
+
+.but a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.but a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+/* Create account button */
+.create-acc{
+    padding-left: 700px;
+    padding-right: 740px;
+    background-color: #f5f5f5;
+}
+
+.create-acc h1{
+    font-size: 35px;
+    padding-top: 8px;
+}
+
+.create-acc p{
+    font-size: 20px;
+    color: grey;
+}
+
+.form-in {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-in input {
+    width: 50%;
+    margin-right: 5px;
+    margin-top: 15px;
+    height: 40px;
+}
+
+/* particular fields details */
+#usname {
+    width: 99%;
+    margin-top: 15px;
+    height: 40px;
+}
+
+#pword {
+    width: 99%;
+    margin-top: 15px;
+    height: 40px;
+}
+
+#re-enter {
+    width: 99%;
+    margin-top: 15px;
+    height: 40px;
+}
+
+/* DOB styling */
+.dob {
+    margin-top: 15px;
+    font-size: 5px;
+    color: grey;
+}
+
+.sel {
+    margin-top: 10px;
+}
+
+.rd-bt {
+    margin-top: 10px;
+}
+
+#fe {
+    margin-left: 25px;
+}
+
+/* Sign Up Button styling */
+
+.button{
+    background-color: darkgreen;
+    color: white;
+    padding: 7px 0;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 35px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 50%;
+    font-size: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+/* Responsive webpage styling */
+@media only screen and (max-width: 600px){
+    .main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 100px;        
+    }
+
+    .b{
+        margin-left: 25px;
+        margin-bottom: 50px;
+    }
+
+    .create-acc {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .create-acc h1{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .create-acc p{
+        text-align: center;
+    }
+
+    #it {
+        padding-bottom: 10px;
+    }
+
+    .button{
+        margin-left: 60px;
+    }
+
+    .sel{
+        margin-left: 10px;
+    }
+}

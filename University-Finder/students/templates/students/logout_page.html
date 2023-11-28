@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+    <title>University Finder</title>
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background-color: orange;
+        }
+        h1, h2{
+        text-align: center;
+        }
+        .app{
+            margin-top: 50px;
+            margin-left: 300px;
+            font-size: 30px;
+       }
+       .app a{
+            text-decoration: none;
+            color: black;
+        } 
+        #hm-btn{
+            margin-top: 40px;
+            margin-left: 765px;
+            background-color: green;
+            width: 300px;
+            height: 55px;
+            color: white;
+            font-size: 20px;
+            border-radius: 15px;
+        }  
+       
+    </style>
+</head>
+<body> 
+    <div class="app">
+        <a href="{% url 'landing_page' %}">University Finder</a> 
+    </div>
+    <hr>
+    <h1> You have been Successfully Logged Out</h1><br>
+    <h2 style="text-align:center;">Thank you for using UNIVERSITY FINDER</h2>
+    <br><br>
+    <h2>See You Later</h2>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Go to Home" id="hm-btn">
+    </form>
+
+    
+</body>
+</html>

