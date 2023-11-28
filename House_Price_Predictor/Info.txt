@@ -1,2 +1,0 @@
-Hello 
-I have created a MAchine Learning Algorithm to predict the Housing Prices in Cannada this algorithm is based on ramdom forest and decesion tree algorithm in which the random forest model has more accuracy.
